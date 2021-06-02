@@ -17,15 +17,27 @@ export class MoviesPage{
   constructor(private apiSvc: ApiService, private router: Router){}
   
   ionViewWillEnter(){
-    this.apiSvc.get('api/Movies').subscribe((response: Array<Movie>) => {
-      this.movies=response; 
-    });
+    this.loadMovies();
   }
+
   goToAddMovie() { 
     
     this.router.navigateByUrl('movies/add');
   }
+
   
+  deleteMovie(movie:Movie){
+    this.apiSvc.delete(`api/Movies/${movie.id}`).subscribe(() => {
+      this.loadMovies();
+    })
+    }
   
+
+  private loadMovies(){
+    this.apiSvc.get('api/Movies').subscribe((response: Array<Movie>) => {
+      this.movies=response; 
+    });
+  }
+
 }
 

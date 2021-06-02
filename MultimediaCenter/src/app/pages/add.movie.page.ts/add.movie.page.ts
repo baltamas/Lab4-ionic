@@ -23,4 +23,8 @@ export class AddMoviePage{
     })
   }
 
+  backToMovies(){
+    this.navCtrl.pop();
+  }
+
 }
