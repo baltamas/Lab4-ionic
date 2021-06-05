@@ -31,15 +31,7 @@
         </ion-item>
         <ion-item>
             <ion-label>Have you seen?</ion-label>
-            <ion-input type="boolean" [(ngModel)]= movie.watched name="watched"></ion-input>
-            <ion-select interface="popover">
-                <ion-select-option>
-                    true
-                </ion-select-option>
-                <ion-select-option>
-                    false
-                </ion-select-option>
-            </ion-select>
+            <ion-checkbox [(ngModel)]= movie.watched name="watched"></ion-checkbox>
         </ion-item>
     </form>
 </div>

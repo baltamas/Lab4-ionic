@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { AddMoviePage } from './pages/add.movie.page.ts/add.movie.page';
+import { AddReservationsPage } from './pages/add.reservation.page/add.reservations.page';
 import { LoginPage } from './pages/login/login.page';
 import { MoviesPage } from './pages/movies/movies.page';
-import { ReservationPage } from './pages/reservations/reservation.page';
+import { ReservationsPage } from './pages/reservations/reservations.page';
 
 const routes: Routes = [
   {
@@ -14,14 +15,17 @@ const routes: Routes = [
     path: 'movies',
     component: MoviesPage,
   },
-
   {
     path: 'reservations',
-    component: ReservationPage,
+    component: ReservationsPage,
   },
   {
     path: 'movies/add',
     component: AddMoviePage,
+  },
+  {
+    path: 'reservations/add',
+    component: AddReservationsPage,
   },
   {
     path: '',

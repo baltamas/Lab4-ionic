@@ -16,7 +16,8 @@ import { AddMoviePage } from './pages/add.movie.page.ts/add.movie.page';
 import { FormsModule } from '@angular/forms';
 import { AuthService } from './services/auth.service';
 import { TokenInterceptor } from './interceptors/auth.token.interceptor';
-import { ReservationPage } from './pages/reservations/reservation.page';
+import { ReservationsPage } from './pages/reservations/reservations.page';
+import { AddReservationsPage } from './pages/add.reservation.page/add.reservations.page';
 @NgModule({
   declarations: [
     //components
@@ -25,9 +26,10 @@ import { ReservationPage } from './pages/reservations/reservation.page';
     NavbarComponent, 
     SideMenuComponent,
     //pages
-    ReservationPage,
     LoginPage,
     MoviesPage, 
+    ReservationsPage,
+    AddReservationsPage,
   ],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, FormsModule], 

@@ -1,0 +1,20 @@
+<app-navbar [pageName]="'Add a reservation'"></app-navbar>
+<ion-content><div>
+    <form>
+      
+        <ion-item>
+            <ion-label>Price</ion-label>
+            <ion-input type="number" [(ngModel)]= reservation.price name="price"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label>Have you paid?</ion-label>
+            <ion-checkbox [(ngModel)]= reservation.paid name="paid"></ion-checkbox>
+        </ion-item>
+    </form>
+</div>
+</ion-content>
+<ion-footer>
+    <ion-button expand="block" (click)="addReservation()">Add reservation</ion-button>
+    <ion-button expand="block" color="secondary" [routerLink]="'/reservations'">Back to reservations</ion-button>
+</ion-footer>

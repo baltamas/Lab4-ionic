@@ -1,9 +1,0 @@
-<app-navbar [pageName]= "'Reservations'"></app-navbar>
-<ion-content>
-    <ion-item *ngFor="let reservation of reservations; let i = index">
-        <ion-label>
-            {{i+1}}       
-        </ion-label>
-        <ion-label>{{reservation?.price}}</ion-label>
-    </ion-item>
-</ion-content>
