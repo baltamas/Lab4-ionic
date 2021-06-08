@@ -18,6 +18,7 @@ import { AuthService } from './services/auth.service';
 import { TokenInterceptor } from './interceptors/auth.token.interceptor';
 import { ReservationsPage } from './pages/reservations/reservations.page';
 import { AddReservationsPage } from './pages/add.reservation.page/add.reservations.page';
+import { UpdateMoviePage } from './pages/update.movie.page/update.movie.page';
 @NgModule({
   declarations: [
     //components
@@ -30,6 +31,7 @@ import { AddReservationsPage } from './pages/add.reservation.page/add.reservatio
     MoviesPage, 
     ReservationsPage,
     AddReservationsPage,
+    UpdateMoviePage,
   ],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, FormsModule], 

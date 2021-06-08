@@ -25,6 +25,9 @@ export class MoviesPage{
     this.router.navigateByUrl('movies/add');
   }
 
+  goToUpdateMovie(){
+    this.router.navigateByUrl('movies/update');
+  }
   
   deleteMovie(movie:Movie){
     this.apiSvc.delete(`api/Movies/${movie.id}`).subscribe(() => {

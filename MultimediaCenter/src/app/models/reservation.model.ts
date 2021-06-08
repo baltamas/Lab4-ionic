@@ -6,5 +6,5 @@ export class Reservation{
     movies: Movie[];
     price: number;
     paid: boolean;
-    
+    movieIds?: number[];
 }

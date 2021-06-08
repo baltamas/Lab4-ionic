@@ -17,7 +17,10 @@ export class ReservationsPage{
 
   reservations: Reservation;
   
-  constructor(private apiSvc: ApiService, private router: Router){}
+  constructor(private apiSvc: ApiService, private router: Router, ){
+
+
+  }
   
   ionViewWillEnter(){
     this.loadReservations();
@@ -32,6 +35,12 @@ export class ReservationsPage{
       this.loadReservations();
     })
     }
+
+    deleteMovie(movie:Movie){
+      this.apiSvc.delete(`api/Movies/${movie.id}`).subscribe(() => {
+        this.loadReservations();
+      })
+      }
   
 
   private loadReservations(){

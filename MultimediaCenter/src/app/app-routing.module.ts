@@ -5,6 +5,7 @@ import { AddReservationsPage } from './pages/add.reservation.page/add.reservatio
 import { LoginPage } from './pages/login/login.page';
 import { MoviesPage } from './pages/movies/movies.page';
 import { ReservationsPage } from './pages/reservations/reservations.page';
+import { UpdateMoviePage } from './pages/update.movie.page/update.movie.page';
 
 const routes: Routes = [
   {
@@ -22,6 +23,10 @@ const routes: Routes = [
   {
     path: 'movies/add',
     component: AddMoviePage,
+  },
+  {
+    path: 'movies/update',
+    component: UpdateMoviePage,
   },
   {
     path: 'reservations/add',

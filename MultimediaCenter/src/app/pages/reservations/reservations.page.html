@@ -1,14 +1,22 @@
 <app-navbar [pageName]="'Reservations'"></app-navbar>
 <ion-content>
-    <ion-list>
-        <ion-item *ngFor="let movie of reservations.movies; let i= index">
-            <ion-label>
-                {{i+1}}
-            </ion-label>
-            <ion-label>{{movie.title}}</ion-label>
-        </ion-item>
-    </ion-list>
+    <ion-card *ngFor="let reservation of reservations; let i = index">
+        <ion-card-header>
+            <ion-card-title color="primary">
+                Price: {{reservation.price + " EUR; "}}
+                Paid: {{reservation.paid}}
+            </ion-card-title>
+            <ion-icon name="trash-outline" (click)="deleteReservation(reservation)"></ion-icon>
+        </ion-card-header>
+        <ion-card-content>
+            <ion-list>
+                <ion-item *ngFor="let movie of reservation.movies">
+                    <ion-label color="medium">{{"Movie: "+movie?.title}}</ion-label>
+                </ion-item>
+            </ion-list>
+        </ion-card-content>
+    </ion-card>
 </ion-content>
 <ion-footer>
-    <ion-button expand="block" (click)="goToAddReservation()">Add a reservation</ion-button>
+    <ion-button expand="block" (click)="goToAddReservation()">Add Reservation</ion-button>
 </ion-footer>

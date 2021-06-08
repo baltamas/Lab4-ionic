@@ -1,20 +1,35 @@
-<app-navbar [pageName]="'Add a reservation'"></app-navbar>
-<ion-content><div>
-    <form>
-      
-        <ion-item>
-            <ion-label>Price</ion-label>
-            <ion-input type="number" [(ngModel)]= reservation.price name="price"></ion-input>
-        </ion-item>
+<app-navbar [pageName]="'New Reservation'"></app-navbar>
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let movie of reservations.movies">
+      <ion-label>{{movie.title}}</ion-label>
+      <ion-icon name="trash-outline" (click)="deleteMovie(movie)"></ion-icon>
+    </ion-item>
+    <ion-item>
+        <ion-label>Price</ion-label>
+        <ion-input type="number" [(ngModel)]= reservations.price name="price"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label>Did you paid the price?</ion-label>
+        <ion-checkbox [(ngModel)]= reservations.paid name="paid"></ion-checkbox>
+    </ion-item>
+  </ion-list>
 
-        <ion-item>
-            <ion-label>Have you paid?</ion-label>
-            <ion-checkbox [(ngModel)]= reservation.paid name="paid"></ion-checkbox>
-        </ion-item>
-    </form>
-</div>
+  <div class="ion-padding" *ngIf="moviesToAdd">
+    <hr>
+    <h5>Movies</h5>
+    <ion-list>
+      <ion-item *ngFor="let movieToAdd of moviesToAdd; let i = index">
+        <ion-label>
+          {{i + 1}}
+        </ion-label>
+        <ion-label>{{ movieToAdd.title }}</ion-label>
+        <ion-icon name="add-circle" (click)="addMovie(movieToAdd)"></ion-icon>
+      </ion-item>
+    </ion-list>
+  </div>
 </ion-content>
 <ion-footer>
-    <ion-button expand="block" (click)="addReservation()">Add reservation</ion-button>
+    <ion-button expand="block" (click)="saveReservation()">Add reservation</ion-button>
     <ion-button expand="block" color="secondary" [routerLink]="'/reservations'">Back to reservations</ion-button>
 </ion-footer>
