@@ -25,16 +25,21 @@ export class MoviesPage{
     this.router.navigateByUrl('movies/add');
   }
 
-  goToUpdateMovie(){
-    this.router.navigateByUrl('movies/update');
+  goToUpdateMovie(movie: Movie){
+    this.router.navigateByUrl(`movies/update/${movie.id}`);
   }
   
   deleteMovie(movie:Movie){
-    this.apiSvc.delete(`api/Movies/${movie.id}`).subscribe(() => {
+    this.apiSvc.delete(`api/movies/${movie.id}`).subscribe(() => {
       this.loadMovies();
     })
     }
   
+    goToMovieDetails(movie: Movie) {
+      this.router.navigateByUrl(`movies/${movie.id}`);
+    }
+  
+    detailMovie(movie: Movie) {}
 
   private loadMovies(){
     this.apiSvc.get('api/Movies').subscribe((response: Array<Movie>) => {

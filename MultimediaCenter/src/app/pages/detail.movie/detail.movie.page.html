@@ -1,0 +1,26 @@
+<app-navbar [pageName]="movie.title"></app-navbar>
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label>Title: {{ movie.title }}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>Director: {{ movie.director }}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>Description: {{ movie.description }}</ion-label>
+    </ion-item>
+    <ion-item>
+        <ion-label>Release Year: {{ movie.releaseYear }}</ion-label>
+      </ion-item>
+    <ion-item>
+      <ion-label>Rating: {{ movie.rating }}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>Watched: {{ movie.watched }}</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
+<ion-footer>
+  <ion-button expand="block" color="secondary" [routerLink]="'/movies'">Back to Movies</ion-button>
+</ion-footer>

@@ -8,8 +8,8 @@
             <!-- <ion-label>{{movie.id}}</ion-label> -->
             <ion-label class="alignme">{{movie.title}}</ion-label>
             <ion-icon name="trash-outline" (click)="deleteMovie(movie)"></ion-icon>
-            <ion-icon name="pencil-outline" (click)="goToUpdateMovie()"></ion-icon>
-            <ion-icon name="chevron-forward-outline"></ion-icon>
+            <ion-icon name="pencil-outline" (click)="goToUpdateMovie(movie)"></ion-icon>
+            <ion-icon name="chevron-forward-outline" (click)="goToMovieDetails(movie)"></ion-icon>
         </ion-item>
     </ion-list>
 </ion-content>
